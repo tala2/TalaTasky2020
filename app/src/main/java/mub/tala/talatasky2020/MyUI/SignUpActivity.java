@@ -1,4 +1,4 @@
-package mub.tala.talatasky2020;
+package mub.tala.talatasky2020.MyUI;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,9 +6,14 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 
+import mub.tala.talatasky2020.R;
+
 public class SignUpActivity extends AppCompatActivity {
 
     private EditText etFirstName,etLastName,etPhone,etEmail2,etPassWord2,etPassWord1;
+    /**
+     * כפתור רשימת ניתונים
+     */
     private Button btnSave;
 
 
@@ -24,6 +29,10 @@ public class SignUpActivity extends AppCompatActivity {
         etPassWord1=findViewById(R.id.etPassWord1);
         btnSave = findViewById(R.id.btnSave);
     }
+
+    /**
+     *המתודה בודקת תקינות טופס ההרשמה ואם תקין מבצעת הרשמה
+     */
     private void checkForm(){
         String passw2 = etPassWord2.getText().toString();
         String passw1 = etPassWord1.getText().toString();
@@ -44,8 +53,8 @@ public class SignUpActivity extends AppCompatActivity {
             isOk=false;
             etEmail2.setError("Wrong Email Address Please Rewrite");
         }
-        {
 
-        }
+
+
     }
 }

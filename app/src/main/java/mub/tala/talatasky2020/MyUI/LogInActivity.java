@@ -1,10 +1,12 @@
-package mub.tala.talatasky2020;
+package mub.tala.talatasky2020.MyUI;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+
+import mub.tala.talatasky2020.R;
 
 public class LogInActivity extends AppCompatActivity {
 
