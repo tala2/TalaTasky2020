@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:rotationX="-4"
+    tools:context=".MyUI.AddTaskActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/btnSaveTask"
+                    android:layout_width="238dp"
+                    android:layout_height="129dp"
+                    android:text="SAVE" />
+
+                <ImageButton
+                    android:id="@+id/imgBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="175dp"
+                    android:src="@drawable/common_google_signin_btn_icon_dark" />
+
+                <Button
+                    android:id="@+id/btnUpload"
+                    android:layout_width="match_parent"
+                    android:layout_height="192dp"
+                    android:text="UPLOAD" />
+
+                <Button
+                    android:id="@+id/btnDatePicker"
+                    android:layout_width="match_parent"
+                    android:layout_height="108dp"
+                    android:text="PICK A DATE" />
+
+                <SeekBar
+                    android:id="@+id/skrbrImportant"
+                    style="@style/Widget.AppCompat.SeekBar.Discrete"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:max="10"
+                    android:progress="3" />
+
+                <TextView
+                    android:id="@+id/tvNeccesary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Neccesery" />
+
+                <EditText
+                    android:id="@+id/etDueDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Due Date"
+                    android:inputType="date" />
+
+                <SeekBar
+                    android:id="@+id/skbrNeccesry"
+                    style="@style/Widget.AppCompat.SeekBar.Discrete"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:max="10"
+                    android:progress="3" />
+
+                <TextView
+                    android:id="@+id/tvImportant"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="TextView" />
+
+                <EditText
+                    android:id="@+id/etSubject"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Text"
+                    android:inputType="textPersonName" />
+
+                <EditText
+                    android:id="@+id/etTittle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Title"
+                    android:inputType="textPersonName" />
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

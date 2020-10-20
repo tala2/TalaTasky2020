@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "368395227533",
+    "firebase_url": "https://talatasky2020.firebaseio.com",
+    "project_id": "talatasky2020",
+    "storage_bucket": "talatasky2020.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:368395227533:android:655ad437c8007fb48f2dc4",
+        "android_client_info": {
+          "package_name": "mub.tala.talatasky2020"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "368395227533-d392hdbtl51dual3a3ash2r7kg7u22ru.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "mub.tala.talatasky2020",
+            "certificate_hash": "37e9d8a462db914dfb2a5f14defca828ca4e0f90"
+          }
+        },
+        {
+          "client_id": "368395227533-8gpmr8qb3sggp19rka38a9d7gsdiujno.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6Hjz2eVV6d9gPjAJgaIj_PsCD6XhEXjc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "368395227533-8gpmr8qb3sggp19rka38a9d7gsdiujno.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
