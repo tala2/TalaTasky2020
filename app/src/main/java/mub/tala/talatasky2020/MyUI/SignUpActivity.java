@@ -1,12 +1,17 @@
 package mub.tala.talatasky2020.MyUI;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 import mub.tala.talatasky2020.MyUtils.MyValidations;
@@ -99,7 +104,26 @@ public class SignUpActivity extends AppCompatActivity {
      * @param phone
      */
     private void createNewAccount(String email, String passw1, String fname, String lname, String phone)
-    {
+    {//1
         FirebaseAuth auth=FirebaseAuth.getInstance();
+        //
+        //2
+        OnCompleteListener<AuthResult> listener=new OnCompleteListener<AuthResult>() {
+            //RESPONS
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if(task.isSuccessful()){
+                    Toast.makeText(SignUpActivity.this,"Successfuly Signing up",Toast.LENGTH_SHORT).show();
+                    finish();
+                }
+              else{
+                    Toast.makeText(SignUpActivity.this,"Signing up, Failed"+task.getException().getMessage(),Toast.LENGTH_SHORT).show();
+                    etEmail2.setError("Signing up, Failed"+task.getException().getMessage());
+                }
+
+            }
+        };
+        //3
+        auth.createUserWithEmailAndPassword(email,passw1).addOnCompleteListener(listener);
     }
 }

@@ -10,8 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MyUI.AddTaskActivity"></activity>
-        <activity android:name=".MyUI.LogInActivity" />
-        <activity android:name=".MyUI.SignUpActivity" />
+        <activity android:name=".MyUI.LogInActivity" ></activity>>
+        <activity android:name=".MyUI.SignUpActivity"></activity >
+
+
         <activity android:name=".MyUI.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
