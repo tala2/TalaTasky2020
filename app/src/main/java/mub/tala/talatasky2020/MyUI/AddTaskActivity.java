@@ -1,14 +1,18 @@
 package mub.tala.talatasky2020.MyUI;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.SeekBar;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -83,6 +87,20 @@ public class AddTaskActivity extends AppCompatActivity {
         //5.
         myTask.setOwner(uid);
         myTask.setKey(key);
+        //6 actual storing
+        reference.child("AllTasls").child(uid).setValue(myTask).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if(task.isSuccessful()){
+                    Toast.makeText(AddTaskActivity.this,"add successful",Toast.LENGTH_SHORT).show();
+                    finish();
+                }
+                else{
+                    Toast.makeText(AddTaskActivity.this,"add failed"+task.getException().getMessage(),Toast.LENGTH_SHORT).show();
+                    task.getException().printStackTrace();
+                }
+            }
+        });
 
     }
 }
