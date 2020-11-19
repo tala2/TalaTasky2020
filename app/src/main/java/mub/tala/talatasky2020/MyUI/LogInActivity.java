@@ -1,14 +1,14 @@
 package mub.tala.talatasky2020.MyUI;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -25,8 +25,14 @@ public class LogInActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //3
+        //10. check if I signed in before
+        FirebaseAuth auth=FirebaseAuth.getInstance();
+        if(auth.getCurrentUser()!=null)//user signed in before
+        {
+            Intent i= new Intent(getBaseContext(),MainActivity.class);
+        }
         setContentView(R.layout.activity_log_in);
+        //3
         etEmail=findViewById(R.id.etEmail);
         etPassword=findViewById(R.id.etPassWord);
         btnLogin=findViewById(R.id.btnLogin);
