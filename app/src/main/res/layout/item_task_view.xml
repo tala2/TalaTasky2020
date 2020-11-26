@@ -56,7 +56,7 @@
         app:srcCompat="@android:drawable/ic_menu_delete" />
 
     <ImageButton
-        android:id="@+id/itmbtnCall"
+        android:id="@+id/itmbtnEdit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -66,12 +66,12 @@
         app:srcCompat="@android:drawable/ic_menu_edit" />
 
     <ImageButton
-        android:id="@+id/itmbtnEdit"
-        android:layout_width="57dp"
-        android:layout_height="0dp"
+        android:id="@+id/itmbtnCall"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="14dp"
-        app:layout_constraintBottom_toBottomOf="@+id/itmbtnCall"
-        app:layout_constraintStart_toEndOf="@+id/itmbtnCall"
-        app:layout_constraintTop_toTopOf="@+id/itmbtnCall"
-        app:srcCompat="@android:drawable/stat_sys_phone_call" />
+        app:layout_constraintBottom_toBottomOf="@+id/itmbtnEdit"
+        app:layout_constraintStart_toEndOf="@+id/itmbtnEdit"
+        app:layout_constraintTop_toTopOf="@+id/itmbtnEdit"
+        app:srcCompat="@mipmap/ic_call" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -30,6 +30,8 @@ public class LogInActivity extends AppCompatActivity {
         if(auth.getCurrentUser()!=null)//user signed in before
         {
             Intent i= new Intent(getBaseContext(),MainActivity.class);
+            finish();
+            startActivity(i);
         }
         setContentView(R.layout.activity_log_in);
         //3

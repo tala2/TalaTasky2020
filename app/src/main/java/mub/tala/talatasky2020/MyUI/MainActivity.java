@@ -5,9 +5,19 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import mub.tala.talatasky2020.Data.MyTask;
 import mub.tala.talatasky2020.Data.MyTaskAdapte;
 import mub.tala.talatasky2020.R;
 
@@ -34,8 +44,39 @@ public class MainActivity extends AppCompatActivity {
         lstTask=findViewById(R.id.listTask);
         //4.
         taskAdapte=new MyTaskAdapte(getBaseContext(),R.layout.item_task_view);
-        //5.
+        //5. connect listview to the adaptor
         lstTask.setAdapter(taskAdapte);
+        //7
+        downloadFromFireBase();
+    }
+    //6.
+    public void downloadFromFireBase(){
+        //where we saved before we need to contact to download
+        //1.
+        final FirebaseDatabase database= FirebaseDatabase.getInstance();
+        //2.
+        DatabaseReference reference= database.getReference();
+        //3. user id
+        FirebaseAuth auth=FirebaseAuth.getInstance();
+        String uid=auth.getCurrentUser().getUid();
+        //4.
+        reference.child("All Task").child(uid).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                taskAdapte.clear();
+                for (DataSnapshot child : dataSnapshot.getChildren())
+                {
+                    MyTask task=child.getValue(MyTask.class);
+                    taskAdapte.add(task);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Toast.makeText(MainActivity.this,"Download Error",Toast.LENGTH_SHORT).show();
+
+            }
+        });
     }
 
 }
