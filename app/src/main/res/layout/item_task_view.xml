@@ -7,23 +7,15 @@
     android:background="#27A196">
 
     <TextView
-        android:id="@+id/itmTvTittle"
-        android:layout_width="232dp"
-        android:layout_height="278dp"
-        android:layout_marginTop="26dp"
-        android:layout_marginEnd="165dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
         android:id="@+id/itmTvSubject"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="14dp"
+        android:layout_marginEnd="79dp"
         android:layout_marginBottom="22dp"
         android:text="TextView"
         app:layout_constraintBottom_toTopOf="@+id/itmbtnDelete"
+        app:layout_constraintEnd_toStartOf="@+id/itmbtnCall"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -32,47 +24,63 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="6dp"
         android:text="Necessary"
-        app:layout_constraintBottom_toBottomOf="@+id/itmTvSubject"
+        app:layout_constraintBaseline_toBaselineOf="@+id/itmTvImportant"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/itmTvSubject" />
+        app:layout_constraintStart_toEndOf="@+id/itmbtnCall" />
 
     <TextView
         android:id="@+id/itmTvImportant"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
+        android:layout_width="67dp"
+        android:layout_height="21dp"
+        android:layout_marginEnd="16dp"
         android:text="important"
-        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/itmbtnCall"
         app:layout_constraintEnd_toStartOf="@+id/itemTvNecessery"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/itmbtnCall" />
 
     <ImageButton
         android:id="@+id/itmbtnDelete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="147dp"
+        app:layout_constraintBottom_toBottomOf="@+id/itmbtnCall"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/itmbtnCall"
         app:srcCompat="@android:drawable/ic_menu_delete" />
 
     <ImageButton
         android:id="@+id/itmbtnEdit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="1dp"
-        app:layout_constraintStart_toEndOf="@+id/itmbtnDelete"
+        android:layout_marginEnd="13dp"
+        app:layout_constraintEnd_toStartOf="@+id/itmbtnCall"
         app:layout_constraintTop_toTopOf="@+id/itmbtnDelete"
         app:srcCompat="@android:drawable/ic_menu_edit" />
 
     <ImageButton
         android:id="@+id/itmbtnCall"
-        android:layout_width="114dp"
-        android:layout_height="111dp"
-        android:layout_marginStart="14dp"
-        app:layout_constraintBottom_toBottomOf="@+id/itmbtnEdit"
-        app:layout_constraintStart_toEndOf="@+id/itmbtnEdit"
-        app:layout_constraintTop_toTopOf="@+id/itmbtnEdit"
+        android:layout_width="59dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="144dp"
+        android:layout_marginEnd="74dp"
+        android:background="@mipmap/ic_call_round"
+        app:layout_constraintEnd_toStartOf="@+id/itemTvNecessery"
+        app:layout_constraintStart_toEndOf="@+id/itmTvSubject"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_launcher_foreground" />
+
+    <TextView
+        android:id="@+id/itmTvTittle"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginEnd="56dp"
+        android:layout_marginBottom="32dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/itemTvNecessery"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
