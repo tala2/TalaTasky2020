@@ -25,7 +25,7 @@ public class LogInActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //10. check if I signed in before
+        //11. check if I signed in before
         FirebaseAuth auth=FirebaseAuth.getInstance();
         if(auth.getCurrentUser()!=null)//user signed in before
         {
@@ -80,20 +80,20 @@ public class LogInActivity extends AppCompatActivity {
     }
     }
     private void logIn(String email,String passw){
-        //5
-        FirebaseAuth auth=FirebaseAuth.getInstance();
         //6
+        FirebaseAuth auth=FirebaseAuth.getInstance();
+        //7
         auth.signInWithEmailAndPassword(email,passw).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
-                //7
+                //8
                 if(task.isSuccessful()){
-                    //8
+                    //9
                     Intent i=new Intent(LogInActivity.this,MainActivity.class);
                     startActivity(i);
                 }
                 else {
-                    //9
+                    //10
                     Toast.makeText(LogInActivity.this,"Faild",Toast.LENGTH_SHORT).show();
                     etEmail.setError(task.getException().getMessage());
                 }
