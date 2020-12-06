@@ -38,7 +38,7 @@ public class AddTaskActivity extends AppCompatActivity {
         //etDueDate=findViewById(R.id.etDueDate);
         skbrImportant = findViewById(R.id.skrbrImportant);
         //skbrNeccesary=findViewById(R.id.skbrNeccesry);
-        btnSave = findViewById(R.id.btnSave);
+        btnSave = findViewById(R.id.btnSaveTask);
         imgBtn1 = findViewById(R.id.imgBtn);
         btnUpload = findViewById(R.id.btnUpload);
         //4. listeners
